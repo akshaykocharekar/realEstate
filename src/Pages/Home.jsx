@@ -57,37 +57,6 @@ const Home = () => {
         </motion.div>
 
         {/* Sections */}
-        <div className="container mx-auto py-16 space-y-12">
-          {sections.map((section, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <div
-                className="h-48 md:h-64 md:w-1/2 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('https://source.unsplash.com/800x600/?${section.title}')`,
-                }}
-              ></div>
-              <div className="p-8 md:w-1/2">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  {section.title}
-                </h2>
-                <p className="text-gray-600 mb-4">{section.description}</p>
-                <Link
-                  to={section.link}
-                  className="text-blue-600 hover:underline font-semibold"
-                >
-                  Learn More →
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </Layout>
   );
