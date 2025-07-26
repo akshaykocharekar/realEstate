@@ -53,18 +53,6 @@ const Home = () => {
               Discover luxury homes, apartments, and commercial spaces tailored
               to your needs.
             </motion.p>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-            >
-              <Link
-                to="/contact"
-                className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-all"
-              >
-                Contact Us
-              </Link>
-            </motion.div>
           </div>
         </motion.div>
 
