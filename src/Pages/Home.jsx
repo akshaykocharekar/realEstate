@@ -1,5 +1,11 @@
+import Layout from "../Components/Layout";
+
 function Home() {
-  return <>hello real estate</>;
+  return (
+    <>
+      <Layout>home</Layout>
+    </>
+  );
 }
 
 export default Home;
