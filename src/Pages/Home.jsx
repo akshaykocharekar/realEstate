@@ -1,25 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "../Components/Layout";
 
 const Home = () => {
-  const sections = [
-    { title: "Blog", description: "Read our latest articles.", link: "/blog" },
-    { title: "About", description: "Learn more about us.", link: "/about" },
-    {
-      title: "Projects",
-      description: "Explore our projects.",
-      link: "/project",
-    },
-    { title: "Team", description: "Meet our amazing team.", link: "/team" },
-    {
-      title: "Contact",
-      description: "Get in touch with us.",
-      link: "/contact",
-    },
-  ];
-
   return (
     <Layout>
       <div className="bg-gray-100 min-h-screen">
@@ -53,10 +36,79 @@ const Home = () => {
               Discover luxury homes, apartments, and commercial spaces tailored
               to your needs.
             </motion.p>
+            <motion.button
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
+              Get Started
+            </motion.button>
           </div>
         </motion.div>
 
-        {/* Sections */}
+        {/* Features Section */}
+        <div className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+              Why Choose Us
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Luxury Properties",
+                  description:
+                    "Explore a curated selection of high-end properties.",
+                  icon: "🏡",
+                },
+                {
+                  title: "Expert Agents",
+                  description:
+                    "Work with experienced agents who understand your needs.",
+                  icon: "👨‍💼",
+                },
+                {
+                  title: "Seamless Process",
+                  description:
+                    "Enjoy a smooth and hassle-free buying experience.",
+                  icon: "⚡",
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-100 p-6 rounded-lg shadow-lg text-center"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Call-to-Action Section */}
+        <div className="bg-blue-600 py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
+            <h2 className="text-3xl font-extrabold mb-4">
+              Ready to Find Your Dream Home?
+            </h2>
+            <p className="text-lg mb-6">
+              Contact us today and let us help you find the perfect property.
+            </p>
+            <motion.button
+              className="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-100"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Contact Us
+            </motion.button>
+          </div>
+        </div>
       </div>
     </Layout>
   );
