@@ -14,8 +14,8 @@ const Layout = ({ children }) => {
     >
       <Navbar />
       <main style={{ flex: 1 }}>{children}</main>
-      <Footer />
       <SideForm /> {/* 👈 Floating contact button here */}
+      <Footer />
     </div>
   );
 };

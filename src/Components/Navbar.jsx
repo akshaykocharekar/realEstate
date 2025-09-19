@@ -11,8 +11,8 @@ const Navbar = () => {
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Blogs", path: "/blog" },
-    { label: "FAQs", path: "/faqs" },
-    { label: "Help", path: "/help" },
+    { label: "About", path: "/about" },
+    { label: "Blogs", path: "/blog" },
   ];
 
   const mobileMenuVariants = {
@@ -30,10 +30,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white text-gray-800 shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
-        {/* Logo */}
         <div className="text-xl font-bold flex items-center gap-2">
-          <div className="w-6 h-6 bg-gradient-to-tr from-indigo-500 to-purple-600 rounded-full animate-pulse" />
-          <span>Logo Ipsum</span>
+          {/* Replace this with your actual logo image */}
+          <img
+            src="src/assests/1758265243960.jpg"
+            alt="Company Logo"
+            className="w-10 h-10 rounded-full object-cover"
+          />
+          <span>Tulip Dwellings</span>
         </div>
 
         {/* Desktop Nav (Hidden on mobile) */}
