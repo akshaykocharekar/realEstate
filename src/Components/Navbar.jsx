@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+import logoImage from "../assests/1758265243960.jpg";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,8 +13,7 @@ const Navbar = () => {
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Blogs", path: "/blog" },
-    { label: "About", path: "/about" },
-    { label: "Blogs", path: "/blog" },
+    { label: "Contact", path: "/contact" },
   ];
 
   const mobileMenuVariants = {
@@ -31,9 +32,9 @@ const Navbar = () => {
     <nav className="bg-white text-gray-800 shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         <div className="text-xl font-bold flex items-center gap-2">
-          {/* Replace this with your actual logo image */}
+          {/* Use the imported logo image */}
           <img
-            src="src/assests/1758265243960.jpg"
+            src={logoImage}
             alt="Company Logo"
             className="w-10 h-10 rounded-full object-cover"
           />
