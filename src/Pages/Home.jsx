@@ -127,7 +127,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
       {/* Property Cards */}
       <section className="py-12 px-6 md:px-12 lg:px-20">
         <h2 className="text-3xl font-bold text-center mb-12">
@@ -163,6 +162,169 @@ const Home = () => {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-16 px-6 md:px-12 bg-white">
+        <motion.h2
+          className="text-3xl font-bold mb-10 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          Latest from Our Blog
+        </motion.h2>
+
+        <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+          {[
+            {
+              title: "5 Tips for First-Time Home Buyers",
+              desc: "Buying your first property? Here’s what you need to know to avoid common mistakes.",
+              link: "/blog/first-time-buyers",
+            },
+            {
+              title: "Why Real Estate is the Best Long-Term Investment",
+              desc: "Explore why properties remain the safest wealth-building tool worldwide.",
+              link: "/blog/real-estate-investment",
+            },
+            {
+              title: "5 Tips for First-Time Home Buyers",
+              desc: "Buying your first property? Here’s what you need to know to avoid common mistakes.",
+              link: "/blog/first-time-buyers",
+            },
+            {
+              title: "Why Real Estate is the Best Long-Term Investment",
+              desc: "Explore why properties remain the safest wealth-building tool worldwide.",
+              link: "/blog/real-estate-investment",
+            },
+          ].map((post, idx) => (
+            <motion.a
+              key={idx}
+              href={post.link}
+              className="bg-gray-50 shadow-md rounded-xl p-6 hover:shadow-xl transition flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.2 }}
+            >
+              <h3 className="font-semibold text-xl mb-3">{post.title}</h3>
+              <p className="text-gray-600 flex-grow">{post.desc}</p>
+              <span className="text-green-600 mt-4 font-medium">
+                Read More →
+              </span>
+            </motion.a>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/blog"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+          >
+            View All Blogs
+          </a>
+        </div>
+      </section>
+      {/* FAQ + Form Side by Side */}
+      <section className="py-20 px-6 md:px-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          {/* FAQ */}
+          <div>
+            <motion.h2
+              className="text-3xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How do I buy a property?",
+                  a: "You can browse listings, book a visit, and contact us for assistance throughout the process.",
+                },
+                {
+                  q: "Do you offer rental services?",
+                  a: "Yes, we connect tenants and landlords with verified rental agreements.",
+                },
+                {
+                  q: "Can I list my property here?",
+                  a: "Of course! Reach out to us and we’ll help you list your property on our platform.",
+                },
+                {
+                  q: "How do I buy a property?",
+                  a: "You can browse listings, book a visit, and contact us for assistance throughout the process.",
+                },
+                {
+                  q: "Do you offer rental services?",
+                  a: "Yes, we connect tenants and landlords with verified rental agreements.",
+                },
+              ].map((item, idx) => (
+                <motion.details
+                  key={idx}
+                  className="border rounded-lg p-5 cursor-pointer bg-white"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.2 }}
+                >
+                  <summary className="font-semibold text-lg">{item.q}</summary>
+                  <p className="mt-2 text-gray-600">{item.a}</p>
+                </motion.details>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white shadow-lg rounded-xl p-8">
+            <motion.h3
+              className="text-2xl font-bold mb-6 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              Get In Touch
+            </motion.h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border rounded-lg p-3"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full border rounded-lg p-3"
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full border rounded-lg p-3"
+              />
+              <textarea
+                placeholder="Message"
+                rows="4"
+                className="w-full border rounded-lg p-3"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg w-full"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      {/* Map */}
+      <section className="w-full h-[400px]">
+        <iframe
+          title="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.085595995495!2d73.9568!3d15.2739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc71d502f5b3f%3A0x1b35e6f2f6b0d5b5!2sDamodar%20College%2C%20Margao%2C%20Goa!5e0!3m2!1sen!2sin!4v1695109200000!5m2!1sen!2sin"
+          className="w-full h-full border-0"
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
       </section>
     </Layout>
   );
